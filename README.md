@@ -36,10 +36,9 @@ EduVoice — A web app that converts educational text into engaging audio. Choos
 ---
 
 ## 🔑 Setup
-
 1. Clone this repo:
-   git clone https://github.com/yourusername/eduvoice.git
-   cd eduvoice
+   git clone https://github.com/patil-diksha/EduVoice-Your-Learning-audio-companion.git
+   cd EduVoice-Your-Learning-audio-companion
 
 2.Replace the api-key in script.js with your own from Murf.ai
 
