@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EduVoice — Your Learning Audio Companion</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+  font-family: 'Inter', sans-serif;
+  background: url('background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  padding: 40px;
+  margin: 0;
+  color: #fff;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3); 
+  z-index: -1;
+}
+
+.container {
+  max-width: 850px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.85);  
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(6px);
+  color: #222;
+}
+
+h1 {
+  font-size: 30px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+p {
+  color: #444;
+  font-size: 16px;
+}
+
+label {
+  font-weight: 600;
+  margin-top: 20px;
+  display: block;
+  color: #222;
+}
+
+textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  resize: vertical;
+  margin-top: 8px;
+  background: #fff;
+  color: #222;
+}
+
+select, button {
+  font-size: 15px;
+  padding: 10px 12px;
+  margin-top: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+select {
+  background: white;
+  color: #333;
+}
+
+button {
+  background-color: #5854b0;
+  color: white;
+  margin-right: 10px;
+  transition: 0.3s;
+  border: none;
+}
+
+button:hover {
+  background-color: #4a448d;
+  cursor: pointer;
+}
+
+#playlistContainer {
+  margin-top: 30px;
+}
+
+.track {
+  background: #eef1ff;
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  color: #222;
+}
+
+.track strong {
+  display: block;
+  margin-bottom: 8px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 14px;
+  margin-left: 8px;
+  color: #6c63ff;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 20px;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>📚 EduVoice</h1>
+    <p>Turn text into smart learning audio — in your voice, your pace.</p>
+
+    <label for="inputText">Paste your learning material:</label>
+    <textarea id="inputText" rows="6" placeholder="Enter text to convert..."></textarea>
+
+    <label for="voiceSelect">Select a voice:</label>
+    <select id="voiceSelect">
+      <option>Loading voices...</option>
+    </select>
+
+
+    <br><br>
+    <button onclick="generatePlaylist()">🎧 Generate Playlist</button>
+    <button onclick="playAll()">▶️ Play All</button>
+
+    <div id="playlistContainer">
+      <!-- Audio tracks will be shown here -->
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
